@@ -57,7 +57,9 @@ public class Controller extends HttpServlet {
                         = request.getRequestDispatcher("template.jsp?page=login");
                 request.setAttribute("msg","Login ou Senha Incorreta!!!");
                 rd.forward(request, response);
-            }else{RequestDispatcher rd
+            }else{
+                request.getSession().setAttribute("usuario", u);
+                RequestDispatcher rd
                     = request.getRequestDispatcher("template.jsp?page=administracao");
             rd.forward(request, response);
             }

@@ -5,11 +5,11 @@
         <input type="hidden" name="action" value="logar" />
         Login: 
         <br />
-        <input type="text" name="cpLogin" value="ze" />
+        <input type="text" name="cpLogin" value="" />
         <br />
         Senha
         <br />
-        <input type="password" name="cpSenha" value="ze" />
+        <input type="password" name="cpSenha" value="" />
         <br />
         <br />
         <input type="submit" name="btnLogar" value="Logar" /> 

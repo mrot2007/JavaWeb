@@ -4,7 +4,13 @@
     Author     : clodoaldo
 --%>
 
+<%@page import="br.ufjf.model.Usuario"%>
+<%@page import="org.apache.catalina.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%
+    Usuario u = (Usuario)session.getAttribute("usuario");
+%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,13 +20,9 @@
     <body>
         <h1>Bem Vindo <font color="red" >
             
-            <% 
-            if(!request.getParameter("cpLogin").isEmpty() && !request.getParameter("cpSenha").isEmpty()){
-            out.println(request.getParameter("cpLogin"));
-            }
-         
-         
-         %></font>!</h1>
+            <%= u.getNome() %>
+            
+            </font>!</h1>
         <br>
         <h1>Aqui nossa pagina de administrador</h1>
         <h1>INSIRA AQUI OS LINKS DAS DIVERSAR FUNCOES POSSIVEIS!</h1>
