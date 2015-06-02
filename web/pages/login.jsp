@@ -2,7 +2,7 @@
 <div class="login">
     <center>
     <form method="post" action="?">
-        <input type="hidden" name="action" value="administracao" />
+        <input type="hidden" name="action" value="logar" />
         Login: 
         <br />
         <input type="text" name="cpLogin" value="ze" />

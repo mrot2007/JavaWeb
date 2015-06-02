@@ -30,7 +30,7 @@ img {border: none;}
             	<li><a href="?"><span>Home</span></a></li>
                 <li><a href="?action=portfolio"><span>Portfolio</span></a></li>
                 <li><a href="?action=servicos"><span>Servicos</span></a></li>
-                <li><a href="?action=login"><span>Administracao</span></a></li>
+                <li><a href="?action=logar"><span>Administracao</span></a></li>
                 <li><a href="?action=contato"><span>Contato</span></a></li>
             </ul>
         </div>

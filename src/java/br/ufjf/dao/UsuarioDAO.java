@@ -34,11 +34,13 @@ public class UsuarioDAO implements Serializable {
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
     }
+    
+    
 
     
-    public Usuario getUserByLoginAndPassword(String login, String senha){
+    public Usuario getUsuarioByLoginAndPassword(String login, String senha){
         Query q = getEntityManager()
-                .createNamedQuery("User.findExistsUser");
+                .createNamedQuery("Usuario.findExistsUser");
         q.setParameter("login", login);
         q.setParameter("senha", senha);
 

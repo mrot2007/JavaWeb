@@ -5,6 +5,8 @@
  */
 package br.ufjf.controller;
 
+import br.ufjf.dao.UsuarioDAO;
+import br.ufjf.model.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.persistence.EntityManagerFactory;
@@ -45,7 +47,21 @@ public class Controller extends HttpServlet {
             RequestDispatcher rd
                     = request.getRequestDispatcher("template.jsp?page=login");
             rd.forward(request, response);
-        } else if (action.equals("administracao")) {
+        } else if (action.equals("logar")) {
+            String login = request.getParameter("cpLogin");
+            String senha = request.getParameter("cpSenha");
+
+            Usuario u = new UsuarioDAO(emf).getUsuarioByLoginAndPassword(login, senha);
+            if (u == null) {
+                RequestDispatcher rd
+                        = request.getRequestDispatcher("template.jsp?page=login");
+                request.setAttribute("msg","Login ou Senha Incorreta!!!");
+                rd.forward(request, response);
+            }else{RequestDispatcher rd
+                    = request.getRequestDispatcher("template.jsp?page=administracao");
+            rd.forward(request, response);
+            }
+            }else if (action.equals("administracao")) {
             RequestDispatcher rd
                     = request.getRequestDispatcher("template.jsp?page=administracao");
             rd.forward(request, response);
@@ -68,7 +84,7 @@ public class Controller extends HttpServlet {
         } 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
      *
