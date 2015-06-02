@@ -106,7 +106,7 @@ img {border: none;}
                 	<li><a href="?">Home</a></li>
                     <li><a href="?action=portfolio">Portfolio</a></li>
                     <li><a href="?action=servicos">Servicos</a></li>
-                    <li><a href="?action=administracao">Administracao</a></li>
+                    <li><a href="?action=logar">Administracao</a></li>
                     <li><a href="?action=contato">Contacto</a></li>
                 </ul>
             </div>
